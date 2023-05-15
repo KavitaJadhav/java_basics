@@ -1,4 +1,5 @@
 public class Switch {
+
     public static void main(String[] args) {
         String value = "bubble";
         switch (value) {
@@ -29,5 +30,10 @@ public class Switch {
             default:
                 System.out.println("invalid option");
         }
+    }
+
+
+    public String hello(String name){
+        return "hello" + name;
     }
 }
