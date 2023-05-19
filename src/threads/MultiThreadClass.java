@@ -18,6 +18,18 @@ public class MultiThreadClass {
         Thread longTask = new Thread(runnable);
         longTask.start();
 
+        Runnable runnableInline = new Runnable() {
+            @Override
+            public void run() {
+                longTask();
+            }
+        };
+
+        Thread longTaskInline = new Thread(runnableInline);
+        longTaskInline.start();
+
+        Thread longTaskLambda = new Thread(() -> longTask());
+        longTaskLambda.start();
 
         System.out.println("Completed main task");
     }
